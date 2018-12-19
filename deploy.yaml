@@ -23,10 +23,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: v
+  name: albertdevopstrain
 spec:
   type: LoadBalancer
   ports:
-  - port: 30080
+  - port: 16731
   selector:
     app: albertdevopstrain
