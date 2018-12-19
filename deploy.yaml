@@ -1,32 +1,32 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: DevOps
+  name: albertdevopstrain
 spec:
   replicas: 1
   strategy:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 1
-  minReadySeconds: 5 
+  minReadySeconds: 5
   template:
     metadata:
       labels:
-        app: DevOps
+        app: albertdevopstrain
     spec:
       containers:
       - name: DevOps
-        image: albertacr.azurecr.io/albertctcheung/DevOps:$BUILD_ID
+        image: docker.io/pleungdev/albertdevopstrain:$BUILD_ID
         ports:
         - containerPort: 16731
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: DevOps
+  name: v
 spec:
   type: LoadBalancer
   ports:
   - port: 30080
   selector:
-    app: DevOps
+    app: albertdevopstrain
