@@ -15,7 +15,7 @@ spec:
         app: albertdevopstrain
     spec:
       containers:
-      - name: DevOps
+      - name: albertdevopstrain
         image: docker.io/pleungdev/albertdevopstrain:$BUILD_ID
         ports:
         - containerPort: 16731
